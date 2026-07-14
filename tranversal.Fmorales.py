@@ -56,7 +56,7 @@ def validar_opcion_sn(opcion):
 def buscar_codigo(codigo, prendas):
     return codigo.upper() in prendas
 
-#opcion numero 1    
+#opcion  1    
 
 def unidades_categoria(categoria):
     total_unidades = 0 
@@ -65,7 +65,9 @@ def unidades_categoria(categoria):
         categoria_prenda = datos [1].lower ()
         if categoria_prenda == categoria_buscada:
             total_unidades += bodega[codigo][1]
-            print(f" total de prendas {categoria}{total_unidades}")
+            print(f" total de prendas {categoria}--{total_unidades}")
+
+#opcion 2
 
 def busqueda_precio(p_min, p_max, prendas, bodega)
     return []
@@ -73,7 +75,7 @@ def busqueda_precio(p_min, p_max, prendas, bodega)
         precio = datos_bodega [0]
         Unidades = datos_bodega[1]
 
-        if p_min <= precio <= p_max and Unidades > 0:
+        if p_min >= precio <= p_max and Unidades > 0:
             modelo = prendas [codigo][0]
             resultado.append (f"{modelo}--{codigo}")
     if len (resultado) > 0:
@@ -81,4 +83,18 @@ def busqueda_precio(p_min, p_max, prendas, bodega)
             print(item)
     else:
         print("no hay prendas en este rango de precios")
+
+#opcion 3
+def actualizar_precio(codigo, nuevo_precio, prendas, bodega):
+    codigo_up =codigo.upper()
+    if buscar_codigo(codigo_up,prendas):
+        bodega [codigo][0]= nuevo_precio
+        return True
+    return False
+
+#opcion 4
+def agregar_prendas(codigo,nombre, categoria, talla, color, material, es_unisex, precio, unidades ):
+    
+
+
         
